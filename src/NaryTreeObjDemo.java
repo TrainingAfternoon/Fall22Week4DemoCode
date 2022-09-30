@@ -28,6 +28,9 @@ public class NaryTreeObjDemo {
             int b = scanner.nextInt();
 
             nodes[a].children.add(nodes[b]);
+            // Makes the tree undirected. Connection is not one way.
+            // If you want a directed tree, comment out this line.
+            nodes[b].children.add(nodes[a]);
         }
 
         for(Node node : nodes) {

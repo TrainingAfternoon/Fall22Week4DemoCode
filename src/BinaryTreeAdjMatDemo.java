@@ -19,6 +19,9 @@ public class BinaryTreeAdjMatDemo {
             int b = scanner.nextInt();
 
             edges[a][b] = true;
+            // Makes the tree undirected. Connection is not one way.
+            // If you want a directed tree, comment out this line.
+            edges[b][a] = true;
         }
 
         for(int node : nodes) {

@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class BinaryTreeObjDemo {
     public static class Node {
         public int data;
+        public Node parent;
         public Node left;
         public Node right;
 
@@ -28,6 +29,10 @@ public class BinaryTreeObjDemo {
 
             if(nodes[a].left != null) nodes[a].left = nodes[b];
             else nodes[a].right = nodes[b];
+
+            // Makes the tree undirected. Connection is not one way.
+            // If you want a directed tree, comment out this line.
+            nodes[b].parent = nodes[a];
         }
 
         for(Node node : nodes) {
